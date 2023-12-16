@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+             background-image:url('bluepic@.jpg');
+			 	 
+        }
+        .calculator {
+            max-width: 40%;
+            margin: 0 auto;
+            
+            padding: 2%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			background-color:#ccffff;
+			text-align:center;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 4%;
+            margin-bottom: 10%;
+			background-color: #ffcccc;
+			border-radius:50px;
+        }
+        button {
+            width: 75px;
+            height: 70px;
+            margin: 5px;
+            font-size: 90%;
+			background-color:#00ffff;
+			border-radius:100px;
+        }
+		@media only screen and (max-width: 600px) {
+		 
+    </style>
+
+    <script type="text/javascript">
+     var x=prompt("Enter Your Name"," ");
+       alert("Welcome to "+x);	
+   </script>
+</head>
+<body>
+    <div class="calculator">
+	<div>
+             
+		</div>
+        <input type="text" id="result" readonly>
+        <div>
+            <button onclick="appendToResult('1')">1</button>
+            <button onclick="appendToResult('2')">2</button>
+            <button onclick="appendToResult('3')">3</button>
+            <button onclick="appendToResult('+')">+</button>
+        </div>
+        <div>
+            <button onclick="appendToResult('4')">4</button>
+            <button onclick="appendToResult('5')">5</button>
+            <button onclick="appendToResult('6')">6</button>
+            <button onclick="appendToResult('-')">-</button>
+        </div>
+        <div>
+            <button onclick="appendToResult('7')">7</button>
+            <button onclick="appendToResult('8')">8</button>
+            <button onclick="appendToResult('9')">9</button>
+            <button onclick="appendToResult('*')">*</button>
+        </div>
+        <div>
+            <button onclick="appendToResult('0')">0</button>
+            <button onclick="clearResult()">C</button>
+            <button onclick="calculateResult()">=</button>
+            <button onclick="appendToResult('/')">/</button>
+        </div>
+		</br></br>
+		<footer align='right';>Designed by Shaik Ammajan</footer>
+    </div>
+    <script>
+        function appendToResult(value) {
+            document.getElementById('result').value += value;
+        }
+
+        function clearResult() {
+            document.getElementById('result').value = '';
+        }
+
+        function calculateResult() {
+            try {
+                const expression = document.getElementById('result').value;
+                const result = eval(expression);
+                document.getElementById('result').value = result;
+            } 
+			catch (error) {
+                document.getElementById('result').value = 'Error';
+            }
+        }
+    </script>
+	
+ </body>
+</html>
